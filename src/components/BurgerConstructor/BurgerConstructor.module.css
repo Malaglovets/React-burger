@@ -1,0 +1,51 @@
+.constructor {
+    width: 600px;
+    margin: 100px 0 0 0;
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 0;
+    margin: 0;
+}
+
+.bun {
+    margin: 0 16px 0 48px;
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+}
+
+.element {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-height: 25vh;
+    overflow-y: scroll;
+    margin: 0;
+    padding: 0;
+
+}
+
+.element_item {
+    display: flex;
+    list-style-type: none;
+    margin: 0 8px 0 16px;
+    flex-direction: row;
+    padding: 0;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.order {
+    display: flex;
+    justify-content: flex-end;
+    margin: 40px 16px 0 0;
+    align-items: center;
+}
+
+.current {
+    margin-left: 9px;
+}

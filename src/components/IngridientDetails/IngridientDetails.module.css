@@ -1,0 +1,24 @@
+.image {
+    max-width: 480px;
+    max-height: 240px;
+}
+
+.nutrition {
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    padding: 0;
+}
+
+.nutrition_item {
+    min-width: 120px;
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: 0 20px 60px 0;
+}
+
+.nutrition_item:last-child {
+    margin-right: 0;
+}

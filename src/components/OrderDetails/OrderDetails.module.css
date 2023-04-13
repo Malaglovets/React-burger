@@ -1,0 +1,17 @@
+.close {
+    position: absolute;
+    background-color: #1C1C21;
+    border: none;
+    top: 60px;
+    right: 40px;
+    padding: 0;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+}
+
+.done {
+    width: 120px;
+    height: 120px;
+    margin-top: 60px;
+}
