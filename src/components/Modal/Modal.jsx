@@ -8,7 +8,7 @@ import { useEffect } from "react";
 
 const reactModal = document.querySelector('#modals');
 
-export default function Modal({children, modalName, handleClose}) {
+export default function Modal({children, headName, handleClose}) {
 
     useEffect(() => {
 
@@ -24,26 +24,24 @@ export default function Modal({children, modalName, handleClose}) {
       },[handleClose])
     
     return createPortal(
-        <>
         <div className={styles.modal}>
             <div className={styles.component}>
-                {modalName !== ' ' &&
-                <div className={styles.head}>
-                    <p className="text text_type_main-large mt-10 ml-10">{modalName}</p>
-                </div>}
-                    <button onClick={() => handleClose()} className={styles.close}>
-                        <CloseIcon type="primary" />
-                    </button>
+                {headName &&
+                    <div className={styles.head}>
+                        <p className="text text_type_main-large mt-10 ml-10">{headName}</p>
+                    </div>}
+                <button onClick={handleClose} className={styles.close}>
+                    <CloseIcon type="primary" />
+                </button>
                 {children}
             </div>
-            <ModalOverlay handleClose={handleClose}/>
-        </div>
-        </>, reactModal
+            <ModalOverlay handleClose={handleClose} />
+        </div>, reactModal
     )
 }
 
 Modal.propTypes = {
     children: PropTypes.element,
-    modalName: PropTypes.string,
-    handleClose: PropTypes.func.isRequired
+    handleClose: PropTypes.func.isRequired,
+    headName: PropTypes.string
 }
