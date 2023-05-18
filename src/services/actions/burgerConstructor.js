@@ -1,13 +1,13 @@
 import uuid from 'react-uuid'
 
-export const ADD_INGRIDIENT = "ADD_INGRIDIENT"
-export const DELETE_INGRIDIENT = "DELETE_INGRIDIENT"
-export const MOVE_INGRIDIENT = "MOVE_INGRIDIENT"
+export const ADD_INGREDIENT = "ADD_INGREDIENT"
+export const DELETE_INGREDIENT = "DELETE_INGREDIENT"
+export const MOVE_INGREDIENT = "MOVE_INGREDIENT"
 export const CLEAN_CONSTRUCTOR = "CLEAN_CONSTRUCTOR"
 
-export const addIngridient = (item) => {
+export const addIngredient = (item) => {
     return {
-        type: ADD_INGRIDIENT,
+        type: ADD_INGREDIENT,
         payload: {
             item,
             uid: uuid()
@@ -15,9 +15,9 @@ export const addIngridient = (item) => {
     }
 }
 
-export const deleteIngridient = (uid, price) => {
+export const deleteIngredient = (uid, price) => {
     return {
-        type: DELETE_INGRIDIENT,
+        type: DELETE_INGREDIENT,
         payload: {
             uid,
             price
@@ -25,9 +25,9 @@ export const deleteIngridient = (uid, price) => {
     }
 }
 
-export const moveIngridient = (dragIndex, hoverIndex) => {
+export const moveIngredient = (dragIndex, hoverIndex) => {
     return {
-        type: MOVE_INGRIDIENT,
+        type: MOVE_INGREDIENT,
         payload: {
             dragIndex,
             hoverIndex

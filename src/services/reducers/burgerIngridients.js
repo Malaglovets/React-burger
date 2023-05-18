@@ -1,32 +1,32 @@
-import { GET_INGRIDIENTS, GET_INGRIDIENTS_SUCCESS, GET_INGRIDIENTS_FAILED } from "../actions/burgerIngridients";
+import { GET_INGREDIENTS, GET_INGREDIENTS_SUCCESS, GET_INGREDIENTS_FAILED } from "../actions/burgerIngredients";
 
 const initialState = {
-    ingridientsRequest: false,
-    ingridientsFailed: false,
-    ingridients: []
+    ingredientsRequest: false,
+    ingredientsFailed: false,
+    ingredients: []
 }
 
-export const ingridientsReducer = (state = initialState, action) => {
+export const ingredientsReducer = (state = initialState, action) => {
     switch (action.type) {
-        case GET_INGRIDIENTS: {
+        case GET_INGREDIENTS: {
             return {
                 ...state,
-                ingridientsRequest: true,
-                ingridientsFailed: false
+                ingredientsRequest: true,
+                ingredientsFailed: false
             };
         }
-        case GET_INGRIDIENTS_SUCCESS: {
+        case GET_INGREDIENTS_SUCCESS: {
             return {
                 ...state,
-                ingridients: action.ingridients,
-                ingridientsRequest: false
+                ingredients: action.ingredients,
+                ingredientsRequest: false
             };
         }
-        case GET_INGRIDIENTS_FAILED: {
+        case GET_INGREDIENTS_FAILED: {
             return {
                 ...state,
-                ingridientsFailed: true,
-                ingridientsRequest: false
+                ingredientsFailed: true,
+                ingredientsRequest: false
             };
         }
         default: {

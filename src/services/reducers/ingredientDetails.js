@@ -1,19 +1,19 @@
-import { HIDE_INGRIDIENT, SHOW_INGRIDIENT } from "../actions/ingridientDetails"
+import { HIDE_INGREDIENT, SHOW_INGREDIENT } from "../actions/ingredientDetails"
 
 const initialState = ({
     visible: false,
     data: []
 })
 
-export const ingridientDetailsReduser = (state = initialState, action) => {
+export const ingredientDetailsReduser = (state = initialState, action) => {
     switch (action.type) {
-        case SHOW_INGRIDIENT: {
+        case SHOW_INGREDIENT: {
             return {
                 visible: true,
                 data: action.payload.data,
             }
         }
-        case HIDE_INGRIDIENT: {
+        case HIDE_INGREDIENT: {
             return {
                 visible: false,
                 data: []

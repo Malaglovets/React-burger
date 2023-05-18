@@ -1,6 +1,5 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { CloseIcon } from '@ya.praktikum/react-developer-burger-ui-components'
 import styles from "./OrderDetails.module.css"
 import imgDone  from "../../images/done.svg";
 

@@ -1,4 +1,4 @@
-import { ADD_INGRIDIENT, CLEAN_CONSTRUCTOR, MOVE_INGRIDIENT, DELETE_INGRIDIENT } from "../actions/burgerConstructor";
+import { ADD_INGREDIENT, CLEAN_CONSTRUCTOR, MOVE_INGREDIENT, DELETE_INGREDIENT } from "../actions/burgerConstructor";
 
 const initialState = {
     draggedElements: [],
@@ -8,7 +8,7 @@ const initialState = {
 
 export const constructorReducer = (state = initialState, action) => {
     switch (action.type) {
-        case ADD_INGRIDIENT: {
+        case ADD_INGREDIENT: {
             const element = { ...action.payload.item, uid: action.payload.uid }
             if (element.type === 'bun') {
                 return {
@@ -24,14 +24,14 @@ export const constructorReducer = (state = initialState, action) => {
                 }
             }
         }
-        case DELETE_INGRIDIENT: {
+        case DELETE_INGREDIENT: {
             return {
                 ...state,
                 draggedElements: [...state.draggedElements.filter(element => element.uid !== action.payload.uid)],
                 elementsPrice: state.elementsPrice - action.payload.price
             }
         }
-        case MOVE_INGRIDIENT: {
+        case MOVE_INGREDIENT: {
             const dragIndex = action.payload.dragIndex
             const hoverIndex = action.payload.hoverIndex
             const dragElement = state.draggedElements[dragIndex]

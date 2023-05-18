@@ -1,13 +1,25 @@
 import { combineReducers } from "redux";
-import { ingridientsReducer } from "./burgerIngridients";
 import { constructorReducer } from "./burgerConstructor";
-import { ingridientDetailsReduser } from "./ingridientDetails";
+import { ingredientDetailsReduser } from "./ingredientDetails";
 import { orderDetailsReducer } from "./orderDetails";
+import { userLoginReduser } from "./login";
+import { userRegisterReduser } from "./register";
+import { passwordResetReduser } from "./passwordReset";
+import { getTokenReduser } from "./forgotPassword";
+import { userInfoReduser } from "./profile";
+import { logOutReduser } from "./logout";
+import { ingredientsReducer } from "./burgerIngridients";
 
 
 export default combineReducers({
-    ingridients: ingridientsReducer,
+    ingredients: ingredientsReducer,
     elements: constructorReducer,
-    ingridientDetails: ingridientDetailsReduser,
-    orderDetails: orderDetailsReducer
+    ingredientDetails: ingredientDetailsReduser,
+    orderDetails: orderDetailsReducer,
+    userLogin: userLoginReduser,
+    userRegister: userRegisterReduser,
+    getToken: getTokenReduser,
+    passwordReset: passwordResetReduser,
+    userInfo: userInfoReduser,
+    logOutSucces: logOutReduser,
 })
