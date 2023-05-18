@@ -1,0 +1,27 @@
+.profile {
+    max-width: 1240px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin: 120px auto 0 auto;
+}
+
+.profile_links {
+    display: flex;
+    flex-direction: column;
+    max-width: 320px;
+    margin: 0 60px 0 0;
+}
+
+.profile_link_active {
+    text-decoration: none;
+    margin: 17px 0 17px 0;
+    color: rgba(242, 242, 243, 1);
+}
+
+.profile_link_inactive {
+    text-decoration: none;
+    margin: 17px 0 17px 0;
+    color: rgba(133, 133, 173, 1)
+}

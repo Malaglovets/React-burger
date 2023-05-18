@@ -1,10 +1,10 @@
 import React from "react";
-import styles from "./styles.module.css";
+import styles from "./forgot-password.module.css";
 import { Input, Button } from '@ya.praktikum/react-developer-burger-ui-components'
 import { Link } from "react-router-dom"
 import { useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
-import { getToken } from "../services/actions/forgotPassword";
+import { getToken } from "../../../../services/actions/forgotPassword";
 
 export function ForgotPasswordPage() {
 

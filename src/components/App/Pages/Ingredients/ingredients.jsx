@@ -1,6 +1,6 @@
 import React from "react";
-import IngredientDetails from "../components/IngredientDetails/IngredientDetails";
-import styles from "./styles.module.css";
+import IngredientDetails from "../../../IngredientDetails/IngredientDetails";
+import styles from "./ingredients.module.css";
 
 export function IngredientPage() {
 

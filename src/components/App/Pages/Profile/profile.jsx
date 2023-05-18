@@ -1,9 +1,9 @@
 import React from "react";
-import styles from "./styles.module.css";
+import styles from "./profile.module.css";
 import { Link, useLocation } from 'react-router-dom'
-import { logOut } from "../services/actions/logout";
+import { logOut } from "../../../../services/actions/logout";
 import { useDispatch } from "react-redux";
-import { getCookie } from "../utils/cookie";
+import { getCookie } from "../../../../utils/cookie";
 
 export function ProfilePage({ children }) {
     

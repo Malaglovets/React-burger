@@ -3,8 +3,8 @@ import { Routes, Route, useLocation, useNavigate } from "react-router-dom"
 import {
   HomePage, LoginPage, RegisterPage, ForgotPasswordPage,
   PasswordResetPage, ProfilePage, IngredientPage
-} from '../../pages';
-import { ProtectedRoute } from '../../pages/protected-route';
+} from './Pages';
+import { ProtectedRoute } from './Pages/ProtectedRoute/protected-route';
 import AppHeader from '../AppHeader/AppHeader';
 import { useDispatch } from 'react-redux';
 import { getUserInfo } from '../../services/actions/profile';

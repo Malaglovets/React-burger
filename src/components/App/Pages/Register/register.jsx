@@ -1,9 +1,9 @@
 import React from "react";
-import styles from "./styles.module.css";
+import styles from "./register.module.css";
 import { Input, PasswordInput, Button } from '@ya.praktikum/react-developer-burger-ui-components'
 import { Link } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
-import { userRegister } from "../services/actions/register";
+import { userRegister } from "../../../../services/actions/register";
 import { useNavigate } from 'react-router-dom'
 
 
