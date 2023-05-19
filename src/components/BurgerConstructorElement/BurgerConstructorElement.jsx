@@ -1,11 +1,11 @@
 import React from "react";
 import PropTypes from 'prop-types';
-import ingridientType from "../../utils/types";
+import ingredientType from "../../utils/types";
 import { useDispatch } from 'react-redux'
 import { ConstructorElement, DragIcon } from "@ya.praktikum/react-developer-burger-ui-components";
 import styles from "./BurgerConstructorElement.module.css";
 import { useDrag, useDrop } from "react-dnd";
-import { deleteIngridient, moveIngridient } from "../../services/actions/burgerConstructor";
+import { deleteIngredient, moveIngredient } from "../../services/actions/burgerConstructor";
 
 export default function BurgerConstructorElement({ index, element, topOrBottom, extraName }) {
 
@@ -46,20 +46,20 @@ export default function BurgerConstructorElement({ index, element, topOrBottom, 
             if (dragIndex > hoverIndex && hoverClientY > hoverMiddleY) {
                 return
             }
-            dispatch(moveIngridient(dragIndex, hoverIndex))
+            dispatch(moveIngredient(dragIndex, hoverIndex))
             item.index = hoverIndex
         }
     })
 
     const deleteElement = (uid, price) => {
-        dispatch(deleteIngridient(uid, price))
+        dispatch(deleteIngredient(uid, price))
     }
     drag(drop(ref))
 
     return (
-        <li
+        <li 
             ref={element.type !== 'bun' ? ref : null}
-            className={element.type === 'bun' ? styles.bun : styles.filling}
+            className={element.type === 'bun' ? styles.bun : styles.filling }
             style={{ opacity }}>
             {element.type !== 'bun' && <DragIcon type="primary" />}
             <ConstructorElement
@@ -77,7 +77,7 @@ export default function BurgerConstructorElement({ index, element, topOrBottom, 
 
 BurgerConstructorElement.propTypes = {
     index: PropTypes.number,
-    element: ingridientType.isRequired,
+    element: ingredientType.isRequired,
     topOrBottom: PropTypes.string,
     extraName: PropTypes.string
 }
