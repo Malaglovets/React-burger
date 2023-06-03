@@ -3,7 +3,7 @@ import { ConstructorElement, DragIcon } from "@ya.praktikum/react-developer-burg
 import styles from "./BurgerConstructorElement.module.css";
 import { useDrag, useDrop, XYCoord  } from "react-dnd";
 import { deleteIngredient, moveIngredient } from "../../services/actions/burgerConstructor";
-import { TElement } from "../../utils/types";
+import { TElement } from "../../services/types/data";
 import { useAppDispatch } from "../../hooks/hooks";
 
 type TConstructorElementProps = {

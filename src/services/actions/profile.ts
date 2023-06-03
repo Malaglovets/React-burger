@@ -1,28 +1,20 @@
 import { config, fetchWithRefresh } from "../../utils/api";
 import { AppDispatch, AppThunk } from "../store";
-import { TUserInfo } from "../../utils/types";
+import { TUserInfo } from "../types/data";
 import { ILoginUserComplete } from "./login";
 import { IRefreshUserInfoComplete } from "./refreshUser";
 import { IUserRegisterComplete } from "./register";
-
-export const GET_USER_INFO: "GET_USER_INFO" = "GET_USER_INFO";
-export const GET_USER_INFO_COMPLETE: "GET_USER_INFO_COMPLETE" = "GET_USER_INFO_COMPLETE";
-export const GET_USER_INFO_FAILED: "GET_USER_INFO_FAILED" = "GET_USER_INFO_FAILED";
-export const CLEAN_USER_INFO: "CLEAN_USER_INFO" = "CLEAN_USER_INFO";
-
+import { GET_USER_INFO, GET_USER_INFO_COMPLETE, GET_USER_INFO_FAILED, CLEAN_USER_INFO } from "../constants/index"
 export interface IGetUserInfo {
     readonly type: typeof GET_USER_INFO
 }
-
 export interface IGetUserInfoComplete {
     readonly type: typeof GET_USER_INFO_COMPLETE
     readonly res: TUserInfo
 }
-
 export interface IGetUserInfoFailed {
     readonly type: typeof GET_USER_INFO_FAILED
 }
-
 export interface ICleanUserInfo {
     readonly type: typeof CLEAN_USER_INFO
 }

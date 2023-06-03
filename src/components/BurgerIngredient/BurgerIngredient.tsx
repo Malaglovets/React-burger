@@ -5,7 +5,7 @@ import { Counter } from '@ya.praktikum/react-developer-burger-ui-components'
 import styles from "./BurgerIngredient.module.css"
 import { useDrag } from "react-dnd"
 import { Link, useLocation } from 'react-router-dom'
-import { TElement } from "../../utils/types";
+import { TElement } from "../../services/types/data";
 import { useAppSelector } from "../../hooks/hooks";
 
 

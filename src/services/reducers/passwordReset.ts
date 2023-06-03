@@ -1,5 +1,5 @@
-import { PASSWORD_RESET, PASSWORD_RESET_CLEAN_STATE, PASSWORD_RESET_FAILED, PASSWORD_RESET_COMPLETE } from "../actions/passwordReset"
-import { TResetForgotPass } from "../../utils/types";
+import { PASSWORD_RESET, PASSWORD_RESET_CLEAN_STATE, PASSWORD_RESET_FAILED, PASSWORD_RESET_COMPLETE } from "../constants/index"
+import { TResetForgotPass } from "../types/data";
 import { TPasswordResetActions } from "../actions/passwordReset";
 
 type TState = {

@@ -11,6 +11,7 @@ export default function AppHeader() {
     const { pathname } = useLocation()
     const constrPage = pathname === "/"
     const profPage = pathname === "/profile"
+    const feedPage = pathname === "/feed"
 
     return (
         <header className={styles.header}>
@@ -32,14 +33,25 @@ export default function AppHeader() {
                                 </p>
                             </>
                         }
-                        
+
                     </Link>
-                    <a href="#" className={styles.link}>
-                        <ListIcon type="secondary" />
-                        <p className="text text_type_main-default text_color_inactive ml-2">
-                            Лента заказов
-                        </p>
-                    </a>
+                    <Link to="/feed" className={styles.link}>
+                        {feedPage ?
+                            <>
+                                <ListIcon type="primary" />
+                                <p className="text text_type_main-default ml-2">
+                                    Лента заказов
+                                </p>
+                            </>
+                            :
+                            <>
+                                <ListIcon type="secondary" />
+                                <p className="text text_type_main-default text_color_inactive ml-2">
+                                    Лента заказов
+                                </p>
+                            </>
+                        }
+                    </Link>
                 </div>
                 <div className={styles.logo}>
                     <Logo />

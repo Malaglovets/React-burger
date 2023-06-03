@@ -1,9 +1,28 @@
 import { config, request } from "../../utils/api";
 import { AppDispatch, AppThunk } from "../store";
+import { TElement } from "../types/data";
+import { GET_INGREDIENTS, GET_INGREDIENTS_COMPLETE, GET_INGREDIENTS_FAILED } from "../constants/index"
 
-export const GET_INGREDIENTS: "GET_INGREDIENTS" = "GET_INGREDIENTS";
-export const GET_INGREDIENTS_COMPLETE: "GET_INGREDIENTS_COMPLETE" = "GET_INGREDIENTS_COMPLETE";
-export const GET_INGREDIENTS_FAILED: "GET_INGREDIENTS_FAILED" = "GET_INGREDIENTS_FAILED";
+export interface IGetBurgerIngredients {
+    readonly type: typeof GET_INGREDIENTS,
+}
+
+export interface IGetBurgerIngredientsComplete {
+    readonly type: typeof GET_INGREDIENTS_COMPLETE,
+    ingredients: {
+        readonly success: boolean,
+        readonly data: TElement[]
+    }
+}
+
+export interface IGetBurgerIngredientsFailed {
+    readonly type: typeof GET_INGREDIENTS_FAILED,
+}
+
+export type TGetBurgeIngredientsActions =
+    | IGetBurgerIngredients
+    | IGetBurgerIngredientsComplete
+    | IGetBurgerIngredientsFailed;
 
 export const getIngredients: AppThunk = () => {
     return function (dispatch: AppDispatch) {

@@ -1,5 +1,6 @@
-import { HIDE_ORDER, SEND_ORDER, SEND_ORDER_ERROR, SEND_ORDER_COMPLETE } from "../actions/orderDetails"
-import { TElement, TOrderOptions } from "../../utils/types";
+import { HIDE_ORDER, SEND_ORDER, SEND_ORDER_ERROR, SEND_ORDER_COMPLETE } from "../constants/index"
+import { TOrderOptions } from "../types/data";
+import { TOrderDetailsActions } from "../actions/orderDetails";
 
 type TState = {
     orderRequest: boolean,
@@ -15,7 +16,7 @@ const initialState = {
     order: undefined
 }
 
-export const orderDetailsReducer = (state: TState = initialState, action: any): TState => {
+export const orderDetailsReducer = (state: TState = initialState, action: TOrderDetailsActions): TState => {
     switch (action.type) {
         case SEND_ORDER: {
             return {

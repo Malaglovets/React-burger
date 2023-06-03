@@ -1,29 +1,20 @@
 import { config, request } from "../../utils/api";
 import { AppDispatch, AppThunk } from "../store";
-import { TResetForgotPass } from "../../utils/types";
-
-export const PASSWORD_RESET: "PASSWORD_RESET" = "PASSWORD_RESET";
-export const PASSWORD_RESET_COMPLETE: "PASSWORD_RESET_COMPLETE" = "PASSWORD_RESET_COMPLETE";
-export const PASSWORD_RESET_FAILED: "PASSWORD_RESET_FAILED" = "PASSWORD_RESET_FAILED";
-export const PASSWORD_RESET_CLEAN_STATE: "PASSWORD_RESET_CLEAN_STATE" = "PASSWORD_RESET_CLEAN_STATE";
-
+import { TResetForgotPass } from "../types/data";
+import { PASSWORD_RESET, PASSWORD_RESET_COMPLETE, PASSWORD_RESET_FAILED, PASSWORD_RESET_CLEAN_STATE } from "../constants";
 export interface IPasswordReset {
     readonly type: typeof PASSWORD_RESET
 }
-
 export interface IPasswordResetComplete {
     readonly type: typeof PASSWORD_RESET_COMPLETE
     readonly res: TResetForgotPass
 }
-
 export interface IPasswordResetFailed {
     readonly type: typeof PASSWORD_RESET_FAILED
 }
-
 export interface IPasswordResetCleanState {
     readonly type: typeof PASSWORD_RESET_CLEAN_STATE
 }
-
 export type TPasswordResetActions =
     | IPasswordReset
     | IPasswordResetComplete
@@ -31,8 +22,7 @@ export type TPasswordResetActions =
     | IPasswordResetCleanState
 
 
-
-    export const passwordReset: AppThunk = (pass: string, token: string) => {
+   export const passwordReset: AppThunk = (pass: string, token: string) => {
         return function (dispatch: AppDispatch) {
             dispatch({
                 type: PASSWORD_RESET

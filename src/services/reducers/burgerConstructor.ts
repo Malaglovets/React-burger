@@ -1,5 +1,6 @@
-import { ADD_INGREDIENT, CLEAN_CONSTRUCTOR, MOVE_INGREDIENT, DELETE_INGREDIENT, TBurgerConstructorActions } from "../actions/burgerConstructor";
-import { TElement } from "../../utils/types";
+import { ADD_INGREDIENT, CLEAN_CONSTRUCTOR, MOVE_INGREDIENT, DELETE_INGREDIENT } from "../constants/index";
+import { TBurgerConstructorActions } from "../actions/burgerConstructor"
+import { TElement } from "../types/data";
 
 type TState = {
     draggedElements: TElement[],

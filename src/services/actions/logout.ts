@@ -1,11 +1,7 @@
 import { config, request } from "../../utils/api";
 import { cleanUserInfo } from "./profile";
 import { AppDispatch, AppThunk } from "../store";
-
-export const LOG_OUT: "LOG_OUT" = "LOG_OUT";
-export const LOG_OUT_COMPLETE: "LOG_OUT_COMPLETE" = "LOG_OUT_COMPLETE";
-export const LOG_OUT_FAILED: "LOG_OUT_FAILED" = "LOG_OUT_FAILED";
-
+import { LOG_OUT, LOG_OUT_COMPLETE, LOG_OUT_FAILED } from "../constants";
 export interface ILogOut {
     readonly type: typeof LOG_OUT
 }

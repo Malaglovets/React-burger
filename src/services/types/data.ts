@@ -54,3 +54,30 @@ export type TUserRegLogin = {
         name: string
     }
 }
+
+export type TOrder = {
+    name: string
+    order: TOrderOptions
+    success: boolean
+}
+
+export type TFeed = {
+    success: boolean,
+    orders: TOrderFeedOptions[],
+    total: number,
+    totalToday: number
+}
+
+export type TOrderFeedOptions = {
+_id: string,
+ingredients: string[],
+name: string,
+status: string,
+number: number,
+createdAt: string,
+updatedAt: string
+}
+
+export type TSameOrderIngredient = TElement & {
+quantity: number
+}

@@ -1,0 +1,14 @@
+.main {
+    display: grid;
+    grid-template-columns: repeat(2, 600px);
+    max-width: 1240px;
+    gap: 40px;
+    justify-content: center;
+    margin: 20px auto 0 auto;
+}
+
+.feed {
+    max-width: 1240px;
+    margin: 0 auto 0 auto;
+}
+

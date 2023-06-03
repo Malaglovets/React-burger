@@ -1,5 +1,4 @@
 import React, { FC } from "react";
-// import { useSelector } from "react-redux";
 import styles from "./OrderDetails.module.css"
 import imgDone  from "../../images/done.svg";
 import { useAppSelector } from "../../hooks/hooks";

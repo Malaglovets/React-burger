@@ -2,9 +2,9 @@ import React from "react";
 import styles from "./register.module.css";
 import { Input, PasswordInput, Button } from '@ya.praktikum/react-developer-burger-ui-components'
 import { Link } from 'react-router-dom'
-import { userRegister } from "../../../../services/actions/register";
+import { userRegister } from "../../services/actions/register";
 import { useNavigate } from 'react-router-dom'
-import { useAppDispatch, useAppSelector } from "../../../../hooks/hooks";
+import { useAppDispatch, useAppSelector } from "../../hooks/hooks";
 
 export function Register() {
 

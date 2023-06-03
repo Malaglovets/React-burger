@@ -2,10 +2,9 @@ import React from "react";
 import styles from "./password-reset.module.css";
 import { Input, PasswordInput, Button } from '@ya.praktikum/react-developer-burger-ui-components'
 import { Link } from "react-router-dom"
-// import { useDispatch, useSelector } from 'react-redux'
-import { passwordReset } from "../../../../services/actions/passwordReset";
+import { passwordReset } from "../../services/actions/passwordReset";
 import { useNavigate } from 'react-router-dom';
-import { useAppDispatch, useAppSelector } from "../../../../hooks/hooks";
+import { useAppDispatch, useAppSelector } from "../../hooks/hooks";
 
 export function ResetPassword() {
 

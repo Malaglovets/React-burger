@@ -1,8 +1,5 @@
-import { TUserInfo } from "../../utils/types"
-import { LOGIN_USER_COMPLETE } from "../actions/login"
-import { CLEAN_USER_INFO, GET_USER_INFO, GET_USER_INFO_FAILED, GET_USER_INFO_COMPLETE } from "../actions/profile"
-import { REFRESH_USER_INFO_COMPLETE } from "../actions/refreshUser"
-import { USER_REGISTER_COMPLETE } from "../actions/register"
+import { TUserInfo } from "../types/data"
+import { CLEAN_USER_INFO, GET_USER_INFO, GET_USER_INFO_FAILED, GET_USER_INFO_COMPLETE, LOGIN_USER_COMPLETE, REFRESH_USER_INFO_COMPLETE, USER_REGISTER_COMPLETE } from "../constants/index";
 import { TProfileActions } from "../actions/profile";
 
 type TState = {

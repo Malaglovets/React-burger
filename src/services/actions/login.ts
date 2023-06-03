@@ -1,11 +1,7 @@
 import { config, request } from "../../utils/api";
 import { AppDispatch, AppThunk } from "../store";
-import { TUserRegLogin } from "../../utils/types";
-
-export const LOGIN_USER: "LOGIN_USER" = "LOGIN_USER";
-export const LOGIN_USER_COMPLETE: "LOGIN_USER_COMPLETE" = "LOGIN_USER_COMPLETE";
-export const LOGIN_USER_FAILED: "LOGIN_USER_FAILED" = "LOGIN_USER_FAILED";
-
+import { TUserRegLogin } from "../types/data";
+import { LOGIN_USER, LOGIN_USER_COMPLETE, LOGIN_USER_FAILED } from "../constants";
 export interface ILoginUser {
     readonly type: typeof LOGIN_USER
 }

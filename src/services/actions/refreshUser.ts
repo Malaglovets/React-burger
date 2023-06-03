@@ -1,20 +1,14 @@
 import { config, fetchWithRefresh } from "../../utils/api";
 import { AppDispatch, AppThunk } from "../store";
-import { TUserInfo } from "../../utils/types";
-
-export const REFRESH_USER_INFO: "REFRESH_USER_INFO" = "REFRESH_USER_INFO";
-export const REFRESH_USER_INFO_COMPLETE: "REFRESH_USER_INFO_COMPLETE" = "REFRESH_USER_INFO_COMPLETE";
-export const REFRESH_USER_INFO_FAILED: "REFRESH_USER_INFO_FAILED" = "REFRESH_USER_INFO_FAILED";
-
+import { TUserInfo } from "../types/data";
+import { REFRESH_USER_INFO, REFRESH_USER_INFO_COMPLETE, REFRESH_USER_INFO_FAILED } from "../constants/index"
 export interface IRefreshUserInfo {
     readonly type: typeof REFRESH_USER_INFO
 }
-
 export interface IRefreshUserInfoComplete {
     readonly type: typeof REFRESH_USER_INFO_COMPLETE
     readonly res: TUserInfo
 }
-
 export interface IRefreshUserInfoFailed {
     readonly type: typeof REFRESH_USER_INFO_FAILED
 }

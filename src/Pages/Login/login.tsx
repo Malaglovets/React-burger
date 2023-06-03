@@ -1,9 +1,9 @@
 import React from "react";
 import styles from "./login.module.css";
 import { Input, PasswordInput, Button } from '@ya.praktikum/react-developer-burger-ui-components';
-import { loginUser } from "../../../../services/actions/login";
+import { loginUser } from "../../services/actions/login";
 import { Link } from 'react-router-dom'
-import { useAppDispatch, useAppSelector } from "../../../../hooks/hooks";
+import { useAppDispatch, useAppSelector } from "../../hooks/hooks";
 
 export function Login() {
 

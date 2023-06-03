@@ -1,5 +1,4 @@
 import React, { useRef } from "react";
-// import { useSelector } from 'react-redux';
 import { Tab } from "@ya.praktikum/react-developer-burger-ui-components"
 import { BurgerIngredient } from "../BurgerIngredient/BurgerIngredient";
 import styles from "./BurgerIngredients.module.css"

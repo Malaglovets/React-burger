@@ -1,5 +1,5 @@
 import { setCookie } from "../../utils/cookie"
-import { LOGIN_USER, LOGIN_USER_COMPLETE, LOGIN_USER_FAILED } from "../actions/login"
+import { LOGIN_USER, LOGIN_USER_COMPLETE, LOGIN_USER_FAILED } from "../constants/index"
 import { TLoginUserActions } from "../actions/login";
 
 type TState = {

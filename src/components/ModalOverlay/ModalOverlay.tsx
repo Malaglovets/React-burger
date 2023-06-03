@@ -1,5 +1,4 @@
 import React, { FC }  from 'react';
-// import PropTypes from 'prop-types';
 import styles from"./ModalOverlay.module.css"
 
 export const ModalOverlay: FC <{handleClose?: () => void}> = ({ handleClose }) => {
@@ -9,6 +8,3 @@ export const ModalOverlay: FC <{handleClose?: () => void}> = ({ handleClose }) =
   )
 }
 
-// ModalOverlay.propTypes = {
-//   handleClose: PropTypes.func.isRequired
-// }

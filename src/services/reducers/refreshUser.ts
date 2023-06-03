@@ -1,6 +1,6 @@
-import { REFRESH_USER_INFO, REFRESH_USER_INFO_FAILED, REFRESH_USER_INFO_COMPLETE } from "../actions/refreshUser"
+import { REFRESH_USER_INFO, REFRESH_USER_INFO_FAILED, REFRESH_USER_INFO_COMPLETE } from "../constants/index"
 import { TRefreshUserActions } from "../actions/refreshUser";
-import { TUserInfo } from "../../utils/types";
+import { TUserInfo } from "../types/data";
 
 
 type TState = {

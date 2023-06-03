@@ -1,6 +1,6 @@
 import React, { FC, ReactNode } from "react";
 import { Navigate, useLocation } from "react-router-dom";
-import { useAppSelector } from "../../../../hooks/hooks";
+import { useAppSelector } from "../../hooks/hooks";
 
 type TProtectedRoute = {
     anonymous?: boolean, 

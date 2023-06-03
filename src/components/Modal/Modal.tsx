@@ -1,10 +1,11 @@
 import React, { FC, ReactNode } from "react";
-// import PropTypes from 'prop-types';
 import styles from "./Modal.module.css"
 import { createPortal } from 'react-dom';
 import { ModalOverlay } from '../ModalOverlay/ModalOverlay';
 import { CloseIcon } from '@ya.praktikum/react-developer-burger-ui-components'
 import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
+
 
 const reactModal = document.querySelector('#modals') as HTMLElement
 
@@ -14,6 +15,7 @@ type TModal = {
     headName?: string
 }
 export const Modal: FC<TModal> = ({ children, handleClose, headName }) => {
+    const location = useLocation()
 
     useEffect(() => {
         if (handleClose !== undefined) {
@@ -33,8 +35,13 @@ export const Modal: FC<TModal> = ({ children, handleClose, headName }) => {
                 {headName &&
                     <div className={styles.head}>
                         <p className="text text_type_main-large mt-10 ml-10">{headName}</p>
+                    </div>
+                }
+                {location.state && location.state.orderNumber &&
+                    <div className={styles.head}>
+                        <p className="text text_type_digits-default mt-15 ml-10"># {location.state.orderNumber}</p>
                     </div>}
-                {handleClose !== undefined &&
+                {handleClose &&
                     <button onClick={handleClose} className={styles.close}>
                         <CloseIcon type="primary" />
                     </button>}
@@ -45,8 +52,3 @@ export const Modal: FC<TModal> = ({ children, handleClose, headName }) => {
     )
 }
 
-// Modal.propTypes = {
-//     children: PropTypes.element,
-//     handleClose: PropTypes.func.isRequired,
-//     headName: PropTypes.string
-// }

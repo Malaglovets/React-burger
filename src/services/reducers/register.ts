@@ -1,5 +1,5 @@
 import { setCookie } from "../../utils/cookie"
-import { REGISTER_CLEAN_STATE, USER_REGISTER, USER_REGISTER_FAILED, USER_REGISTER_COMPLETE } from "../actions/register"
+import { REGISTER_CLEAN_STATE, USER_REGISTER, USER_REGISTER_FAILED, USER_REGISTER_COMPLETE } from "../constants/index"
 
 type TState = {
     userRegisterRequest: boolean,

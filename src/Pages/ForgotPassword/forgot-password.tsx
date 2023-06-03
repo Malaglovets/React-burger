@@ -3,8 +3,8 @@ import styles from "./forgot-password.module.css";
 import { Input, Button } from '@ya.praktikum/react-developer-burger-ui-components'
 import { Link } from "react-router-dom"
 import { useNavigate } from 'react-router-dom'
-import { useAppDispatch, useAppSelector } from "../../../../hooks/hooks";
-import { getToken } from "../../../../services/actions/forgotPassword";
+import { useAppDispatch, useAppSelector } from "../../hooks/hooks";
+import { getToken } from "../../services/actions/forgotPassword";
 
 export function ForgotPassword() {
 

@@ -1,13 +1,7 @@
 import { config, request } from "../../utils/api";
 import { AppDispatch, AppThunk } from "../store";
-import { TResetForgotPass } from "../../utils/types";
-
-export const GET_TOKEN: "GET_TOKEN" = "GET_TOKEN";
-export const GET_TOKEN_COMPLETE: "GET_TOKEN_COMPLETE" = "GET_TOKEN_COMPLETE";
-export const GET_TOKEN_FAILED: "GET_TOKEN_FAILED" = "GET_TOKEN_FAILED";
-export const GET_TOKEN_CLEAN_STATE: "GET_TOKEN_CLEAN_STATE" = "GET_TOKEN_CLEAN_STATE"
-
-
+import { TResetForgotPass } from "../types/data";
+import { GET_TOKEN, GET_TOKEN_COMPLETE, GET_TOKEN_FAILED, GET_TOKEN_CLEAN_STATE } from "../constants/index"
 export interface IGetToken {
     readonly type: typeof GET_TOKEN
 }
