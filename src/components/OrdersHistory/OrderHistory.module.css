@@ -1,0 +1,21 @@
+.list {
+    margin: 0 0 0 0;
+    padding: 0;
+    overflow-y: scroll;
+    height: 76vh;
+}
+
+.item {
+    max-width: 844px;
+    margin: 24px 0 8px 0;
+    list-style-type: none;
+}
+
+.item:first-child {
+    margin-top: 0;
+}
+
+.link {
+    text-decoration: none;
+    color: rgba(242, 242, 243, 1);
+}
