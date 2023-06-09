@@ -15,7 +15,7 @@ type TState = {
     }
 }
 
-const initialState = {
+export const initialState = {
     userRegisterRequest: false,
     userRegisterFailed: false,
     res: undefined

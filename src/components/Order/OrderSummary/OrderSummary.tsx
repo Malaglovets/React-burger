@@ -1,5 +1,5 @@
 import React, { FC, ReactNode } from "react";
-import { useAppSelector } from "../../hooks/hooks";
+import { useAppSelector } from "../../../hooks/hooks";
 import styles from './OrderSummary.module.css'
 
 export const OrderSummary = () => {

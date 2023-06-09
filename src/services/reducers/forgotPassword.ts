@@ -9,7 +9,7 @@ type TState = {
     res?: TResetForgotPass
 }
 
-const initialState = {
+export const initialState = {
     sentPassRequest: false,
     sentPassFailed: false,
     isMailSent: false,

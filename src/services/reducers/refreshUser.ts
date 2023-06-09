@@ -9,7 +9,7 @@ type TState = {
     userRefresh?: TUserInfo
 }
 
-const initialState = {
+export const initialState = {
     userRefreshRequest: false,
     userRefreshFailed: false,
     userRefresh: undefined

@@ -8,7 +8,7 @@ type TState = {
     ingredients: TElement[]
 }
 
-const initialState = {
+export const initialState = {
     ingredientsRequest: false,
     ingredientsFailed: false,
     ingredients: []

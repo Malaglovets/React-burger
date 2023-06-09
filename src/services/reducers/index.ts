@@ -7,7 +7,7 @@ import { passwordResetReduser } from "./passwordReset";
 import { getTokenReduser } from "./forgotPassword";
 import { userInfoReduser } from "./profile";
 import { logOutReduser } from "./logout";
-import { ingredientsReducer } from "./burgerIngridients";
+import { ingredientsReducer } from "./burgerIngredients";
 import { RefreshUserInfoReduser } from "./refreshUser";
 import { feedReducer } from "./feed";
 import { orderHistoryReducer } from "./orderHistory";

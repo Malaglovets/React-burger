@@ -1,15 +1,15 @@
 import React, { FC } from "react";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
 import styles from './OrderInfo.module.css';
-import { ImageIngredient } from "../ImageIngredient/ImageIngredient";
+import { ImageIngredient } from "../../ImageIngredient/ImageIngredient";
 import { CurrencyIcon, FormattedDate } from "@ya.praktikum/react-developer-burger-ui-components";
-import { useAppDispatch, useAppSelector } from "../../hooks/hooks";
-import { TElement, TOrderFeedOptions, TSameOrderIngredient } from "../../services/types/data";
-import { feedClose, feedStart } from "../../services/actions/feed";
+import { useAppDispatch, useAppSelector } from "../../../hooks/hooks";
+import { TElement, TOrderFeedOptions, TSameOrderIngredient } from "../../../services/types/data";
+import { feedClose, feedStart } from "../../../services/actions/feed";
 import uuid from 'react-uuid';
-import { getCookie } from "../../utils/cookie";
-import { orderHistoryClose, orderHistoryStart } from "../../services/actions/orderHistory";
-import { wsURL } from "../../services/constants";
+import { getCookie } from "../../../utils/cookie";
+import { orderHistoryClose, orderHistoryStart } from "../../../services/actions/orderHistory";
+import { wsURL } from "../../../utils/constants";
 
 export const OrderInfo: FC = () => {
     const { ingredients } = useAppSelector(state => state.ingredients)

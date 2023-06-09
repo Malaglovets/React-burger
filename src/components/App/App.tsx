@@ -16,8 +16,8 @@ import { IngredientDetails } from '../IngredientDetails/IngredientDetails';
 import styles from "./App.module.css";
 import { Page404 } from '../../Pages/Page404/page404';
 import { Feed } from '../../Pages/Feed/feed';
-import { OrderInfo } from '../OrderInfo/OrderInfo';
-import { OrdersHistory } from '../OrdersHistory/OrdersHistory';
+import { OrderInfo } from '../Order/OrderInfo/OrderInfo';
+import { OrdersHistory } from '../Order/OrdersHistory/OrdersHistory';
 
 
 export const App: FC = () => {
@@ -33,7 +33,6 @@ export const App: FC = () => {
     dispatch(getIngredients())
     dispatch(getUserInfo(getCookie('token')))
   }, [])
-  console.log(getUserInfo);
   return (
     <>
       <AppHeader />
@@ -59,14 +58,17 @@ export const App: FC = () => {
               <IngredientDetails />
             </Modal>}
           />
-          <Route path='/profile/orders/:orderId' element={
+          <Route path='/profile/orders/:orderId' element={<ProtectedRoute
+            element={
+              <Modal handleClose={handleClose}>
+                <OrderInfo />
+              </Modal>
+            } />} />
+                   <Route path='/feed/:feedId' element={
             <Modal handleClose={handleClose}>
-              console.log(OrderInfo);
               <OrderInfo />
             </Modal>
-          }/>
-          <Route path='/feed/:feedId' element={<ProtectedRoute element={<Modal handleClose={handleClose}><OrderInfo /></Modal>
-}/>}/> 
+          } />
         </Routes>
       )}
       </main>

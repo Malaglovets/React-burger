@@ -9,7 +9,7 @@ type TState = {
     userInfo?: TUserInfo
 }
 
-const initialState = {
+export const initialState = {
     userInfoRequest: false,
     authChecked: false,
     userInfoFailed: false,
@@ -50,6 +50,7 @@ export const userInfoReduser = (state: TState = initialState, action: TProfileAc
         case REFRESH_USER_INFO_COMPLETE: {
             return {
                 ...state,
+                authChecked: true,
                 userInfo: action.res
             }
         }
@@ -62,12 +63,7 @@ export const userInfoReduser = (state: TState = initialState, action: TProfileAc
             }
         }
         case CLEAN_USER_INFO: {
-            return {
-                userInfoRequest: false,
-                authChecked: true,
-                userInfoFailed: false,
-                userInfo: undefined
-            }
+            return initialState
         }
         default: {
             return state

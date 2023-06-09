@@ -8,7 +8,7 @@ type TWSState = {
     error?: Event;
 }
 
-const initialState = {
+export const initialState = {
     wsConnected: false,
     orderHistory: null
 };
