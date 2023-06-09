@@ -29,4 +29,4 @@ npm run test:cy
 
 <h2>Ссылка на мою проектную работу</h2>
 
-https://malaglovets.github.io/react-burger/
+./https://malaglovets.github.io/react-burger/
