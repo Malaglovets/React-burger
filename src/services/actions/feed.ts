@@ -1,5 +1,6 @@
 import { FEED_CLOSE, FEED_CLOSED, FEED_ERROR, FEED_GET_MESSAGE, FEED_START, FEED_SUCCESS } from "../constants";
 import { TWsActions } from "../middleware/socketMiddleware";
+import { TFeed } from "../types/data";
   
 export interface IFeedStart {
     readonly type: typeof FEED_START,
@@ -11,9 +12,34 @@ export interface IFeedClose {
   readonly payload: string
 }
 
+export interface IFeedSuccess {
+  readonly type: typeof FEED_SUCCESS,
+  readonly payload: Event
+}
+
+export interface IFeedError {
+  readonly type: typeof FEED_ERROR,
+  readonly payload: Event
+}
+
+export interface IFeedClosed {
+  readonly type: typeof FEED_CLOSED,
+  readonly payload: Event
+}
+
+export interface IFeedGetMessage {
+  readonly type: typeof FEED_GET_MESSAGE,
+  readonly payload: TFeed
+}
+
+
 export type TFeedActions = 
   | IFeedStart
   | IFeedClose
+  | IFeedSuccess
+  | IFeedError
+  | IFeedClosed
+  | IFeedGetMessage
 
 
 export const feedStart = (Url: string) => {

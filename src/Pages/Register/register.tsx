@@ -27,7 +27,7 @@ export function Register() {
     }
 
     return (
-        <form className={styles.form}>
+        <form className={styles.form} onClick={register}>
             <p className="text text_type_main-medium mb-6">Регистрация</p>
             <Input
                 type={'text'}
@@ -59,7 +59,6 @@ export function Register() {
             />
             <Button
                 disabled={email === '' || name === '' || pass === '' || userRegisterRequest ? true : false}
-                onClick={register}
                 htmlType="submit"
                 type="primary"
                 size="large"

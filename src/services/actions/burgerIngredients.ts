@@ -1,6 +1,6 @@
 import { config, request } from "../../utils/api";
-import { AppDispatch, AppThunk } from "../store";
-import { TElement } from "../types/data";
+import { AppThunk } from "../store";
+import { TIngredients } from "../types/data";
 import { GET_INGREDIENTS, GET_INGREDIENTS_COMPLETE, GET_INGREDIENTS_FAILED } from "../constants/index"
 
 export interface IGetBurgerIngredients {
@@ -9,10 +9,7 @@ export interface IGetBurgerIngredients {
 
 export interface IGetBurgerIngredientsComplete {
     readonly type: typeof GET_INGREDIENTS_COMPLETE,
-    ingredients: {
-        readonly success: boolean,
-        readonly data: TElement[]
-    }
+    ingredients: TIngredients
 }
 
 export interface IGetBurgerIngredientsFailed {
@@ -24,16 +21,15 @@ export type TGetBurgeIngredientsActions =
     | IGetBurgerIngredientsComplete
     | IGetBurgerIngredientsFailed;
 
-export const getIngredients: AppThunk = () => {
-    return function (dispatch: AppDispatch) {
+    export const getIngredients = (): AppThunk => (dispatch) => {
         dispatch({
             type: GET_INGREDIENTS
         })
-        request(`${config.baseUrl}/ingredients`, {
+        request<TIngredients>(`${config.baseUrl}/ingredients`, {
             method: "GET",
             headers: config.headers
-            }
-            )
+        }
+        )
             .then(res => {
                 if (res) {
                     dispatch({
@@ -48,4 +44,3 @@ export const getIngredients: AppThunk = () => {
                 })
             })
     }
-}

@@ -4,9 +4,8 @@ import styles from './OrderInfo.module.css';
 import { ImageIngredient } from "../../ImageIngredient/ImageIngredient";
 import { CurrencyIcon, FormattedDate } from "@ya.praktikum/react-developer-burger-ui-components";
 import { useAppDispatch, useAppSelector } from "../../../hooks/hooks";
-import { TElement, TOrderFeedOptions, TSameOrderIngredient } from "../../../services/types/data";
+import { TElement, TOrderFeedOptions } from "../../../services/types/data";
 import { feedClose, feedStart } from "../../../services/actions/feed";
-import uuid from 'react-uuid';
 import { getCookie } from "../../../utils/cookie";
 import { orderHistoryClose, orderHistoryStart } from "../../../services/actions/orderHistory";
 import { wsURL } from "../../../utils/constants";
@@ -28,7 +27,6 @@ export const OrderInfo: FC = () => {
 
     React.useEffect(() => {
         if (!orderFeed && feedId) {
-            console.log('connect')
             dispatch(feedStart(`${wsURL}/all`))
             return () => {
                 dispatch(feedClose('closed by client'))
@@ -124,7 +122,7 @@ export const OrderInfo: FC = () => {
                     {orderIngredients.map(ingredient => {
                         if (ingredient.type === 'bun') {
                             return (
-                                <li key={uuid()} className={styles.ingredient}>
+                                <li key={ingredient._id} className={styles.ingredient}>
                                     <div className={styles.picture}>
                                         <ImageIngredient ingredient={ingredient} />
                                         <p className="text text_type_main-default ml-4">{ingredient.name}</p>
@@ -137,7 +135,7 @@ export const OrderInfo: FC = () => {
                             )
                         } else {
                             return (
-                                <li key={uuid()} className={styles.ingredient}>
+                                <li key={ingredient._id} className={styles.ingredient}>
                                     <div className={styles.picture}>
                                         <ImageIngredient ingredient={ingredient} />
                                         <p className="text text_type_main-default ml-4">{ingredient.name}</p>

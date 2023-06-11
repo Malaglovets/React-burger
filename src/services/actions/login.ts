@@ -1,5 +1,5 @@
 import { config, request } from "../../utils/api";
-import { AppDispatch, AppThunk } from "../store";
+import { AppThunk } from "../store";
 import { TUserRegLogin } from "../types/data";
 import { LOGIN_USER, LOGIN_USER_COMPLETE, LOGIN_USER_FAILED } from "../constants";
 export interface ILoginUser {
@@ -20,12 +20,11 @@ export type TLoginUserActions =
     | ILoginUserComplete
     | ILoginUserFailed
 
-export const loginUser: AppThunk = (email: string, pass: string) => {
-    return function (dispatch: AppDispatch) {
+    export const loginUser = (email: string, pass: string): AppThunk => (dispatch) => {
         dispatch({
             type: LOGIN_USER
         })
-        request(`${config.baseUrl}/auth/login`, {
+        request<TUserRegLogin>(`${config.baseUrl}/auth/login`, {
             method: "POST",
             headers: config.headers,
             body: JSON.stringify({
@@ -48,4 +47,3 @@ export const loginUser: AppThunk = (email: string, pass: string) => {
                 })
             })
     }
-}

@@ -1,5 +1,6 @@
 import { constructorReducer, initialState } from "./burgerConstructor";
 import * as types from "../constants"
+import { bunUidR2D3, sauceUid, mainUid } from "../constants";
 
 export const bunR2D3 = {
     calories: 643,
@@ -72,12 +73,12 @@ describe('constructorReducer', () => {
                 type: types.ADD_INGREDIENT,
                 payload: {
                     item: bunR2D3,
-                    uid: "928c0cf7-06a9-14e2-fed7-5ae9de559f3c"
+                    uid: bunUidR2D3
                 }
             })
         ).toEqual({
             draggedElements: [
-                { ...bunR2D3, uid: "928c0cf7-06a9-14e2-fed7-5ae9de559f3c" }
+                { ...bunR2D3, uid: bunUidR2D3 }
             ],
             bunsPrice: 1976,
             elementsPrice: 0
@@ -88,7 +89,7 @@ describe('constructorReducer', () => {
         expect(constructorReducer(
             {
                 draggedElements: [
-                    { ...bunR2D3, uid: "928c0cf7-06a9-14e2-fed7-5ae9de559f3c" }
+                    { ...bunR2D3, uid: bunUidR2D3 }
                 ],
                 bunsPrice: 1976,
                 elementsPrice: 0
@@ -113,7 +114,7 @@ describe('constructorReducer', () => {
         expect(constructorReducer(
             {
                 draggedElements: [
-                    { ...bunR2D3, uid: "928c0cf7-06a9-14e2-fed7-5ae9de559f3c" }
+                    { ...bunR2D3, uid: bunUidR2D3 }
                 ],
                 bunsPrice: 1976,
                 elementsPrice: 0
@@ -122,13 +123,13 @@ describe('constructorReducer', () => {
                 type: types.ADD_INGREDIENT,
                 payload: {
                     item: sauce,
-                    uid: "513b95b2-21a7-e2cc-dc99-468f496635c3"
+                    uid: sauceUid
                 }
             })
         ).toEqual({
             draggedElements: [
-                { ...bunR2D3, uid: "928c0cf7-06a9-14e2-fed7-5ae9de559f3c" },
-                { ...sauce, uid: "513b95b2-21a7-e2cc-dc99-468f496635c3" }
+                { ...bunR2D3, uid: bunUidR2D3 },
+                { ...sauce, uid: sauceUid }
             ],
             bunsPrice: 1976,
             elementsPrice: 80
@@ -139,8 +140,8 @@ describe('constructorReducer', () => {
         expect(constructorReducer(
             {
                 draggedElements: [
-                    { ...bunR2D3, uid: "928c0cf7-06a9-14e2-fed7-5ae9de559f3c" },
-                    { ...sauce, uid: "513b95b2-21a7-e2cc-dc99-468f496635c3" }
+                    { ...bunR2D3, uid: bunUidR2D3 },
+                    { ...sauce, uid: sauceUid }
                 ],
                 bunsPrice: 1976,
                 elementsPrice: 80
@@ -148,13 +149,13 @@ describe('constructorReducer', () => {
             {
                 type: types.DELETE_INGREDIENT,
                 payload: {
-                    uid: "513b95b2-21a7-e2cc-dc99-468f496635c3",
+                    uid: sauceUid,
                     price: 80
                 }
             })
         ).toEqual({
             draggedElements: [
-                { ...bunR2D3, uid: "928c0cf7-06a9-14e2-fed7-5ae9de559f3c" }
+                { ...bunR2D3, uid: bunUidR2D3 }
             ],
             bunsPrice: 1976,
             elementsPrice: 0
@@ -165,9 +166,9 @@ describe('constructorReducer', () => {
         expect(constructorReducer(
             {
                 draggedElements: [
-                    { ...bunR2D3, uid: "928c0cf7-06a9-14e2-fed7-5ae9de559f3c" },
-                    { ...sauce, uid: "513b95b2-21a7-e2cc-dc99-468f496635c3" },
-                    { ...main, uid: "4180955b-de2e-9b6e-ffa0-d715fab4b5c1" }
+                    { ...bunR2D3, uid: bunUidR2D3 },
+                    { ...sauce, uid: sauceUid },
+                    { ...main, uid: mainUid }
                 ],
                 bunsPrice: 1976,
                 elementsPrice: 170
@@ -181,9 +182,9 @@ describe('constructorReducer', () => {
             })
         ).toEqual({
             draggedElements: [
-                { ...bunR2D3, uid: "928c0cf7-06a9-14e2-fed7-5ae9de559f3c" },
-                { ...main, uid: "4180955b-de2e-9b6e-ffa0-d715fab4b5c1" },
-                { ...sauce, uid: "513b95b2-21a7-e2cc-dc99-468f496635c3" }
+                { ...bunR2D3, uid: bunUidR2D3 },
+                { ...main, uid: mainUid },
+                { ...sauce, uid: sauceUid }
             ],
             bunsPrice: 1976,
             elementsPrice: 170
@@ -194,9 +195,9 @@ describe('constructorReducer', () => {
         expect(constructorReducer(
             {
                 draggedElements: [
-                    { ...bunR2D3, uid: "928c0cf7-06a9-14e2-fed7-5ae9de559f3c" },
-                    { ...main, uid: "4180955b-de2e-9b6e-ffa0-d715fab4b5c1" },
-                    { ...sauce, uid: "513b95b2-21a7-e2cc-dc99-468f496635c3" }
+                    { ...bunR2D3, uid: bunUidR2D3 },
+                    { ...main, uid: mainUid },
+                    { ...sauce, uid: sauceUid }
                 ],
                 bunsPrice: 1976,
                 elementsPrice: 170

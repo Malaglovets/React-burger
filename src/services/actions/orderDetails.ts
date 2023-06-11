@@ -1,11 +1,10 @@
 import { config, fetchWithRefresh } from "../../utils/api";
 import { TElement, TOrder } from "../types/data";
-import { AppDispatch, AppThunk } from "../store";
+import { AppThunk } from "../store";
 import { CLEAN_CONSTRUCTOR, SEND_ORDER, SEND_ORDER_COMPLETE, SEND_ORDER_ERROR, HIDE_ORDER } from "../constants/index";
 export interface ISendOrder {
   readonly type: typeof SEND_ORDER
 }
-
 export interface ISendOrderComplete {
   readonly type: typeof SEND_ORDER_COMPLETE
   order: TOrder
@@ -25,13 +24,11 @@ export type TOrderDetailsActions =
   | ISendOrderError
   | IHideOrder;
 
-
-export const sendOrder: AppThunk = (ingredients: TElement[], token: string) => {
-  return function (dispatch: AppDispatch) {
+  export const sendOrder = (ingredients: TElement[], token: string): AppThunk => (dispatch) => {
     dispatch({
       type: SEND_ORDER
     })
-    fetchWithRefresh(`${config.baseUrl}/orders`, {
+    fetchWithRefresh<TOrder>(`${config.baseUrl}/orders`, {
       method: "POST",
       headers: {
         'Content-Type': 'application/json',
@@ -61,10 +58,10 @@ export const sendOrder: AppThunk = (ingredients: TElement[], token: string) => {
         })
       })
   }
-}
-
-export const hideOrder = () => {
-  return {
-    type: HIDE_ORDER
+  
+  export const hideOrder = () => {
+    return {
+      type: HIDE_ORDER
+    }
   }
-}
+
