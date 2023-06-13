@@ -18,7 +18,7 @@ export function Login() {
     }
 
     return (
-        <form className={styles.form} onClick={logIn}>
+        <form className={styles.form} onSubmit={logIn}>
             <p className="text text_type_main-medium mb-6">Вход</p>
             <Input
                 type={'email'}

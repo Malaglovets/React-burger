@@ -27,7 +27,7 @@ export function Register() {
     }
 
     return (
-        <form className={styles.form} onClick={register}>
+        <form className={styles.form} onSubmit={register}>
             <p className="text text_type_main-medium mb-6">Регистрация</p>
             <Input
                 type={'text'}
