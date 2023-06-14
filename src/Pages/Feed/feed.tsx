@@ -1,10 +1,10 @@
 import React, { FC } from "react";
-import { OrderSummary } from "../../components/OrderSummary/OrderSummary";
-import { OrderList } from "../../components/OrderList/OrderList";
+import { OrderSummary } from "../../components/Order/OrderSummary/OrderSummary";
+import { OrderList } from "../../components/Order/OrderList/OrderList";
 import styles from "./feed.module.css"
 import { useAppDispatch, useAppSelector } from "../../hooks/hooks";
 import { feedClose, feedStart } from "../../services/actions/feed";
-import { wsURL } from "../../services/constants";
+import { wsURL } from "../../utils/constants";
 
 export const Feed: FC = () => {
     const dispatch = useAppDispatch()
@@ -21,14 +21,11 @@ export const Feed: FC = () => {
         <section className={styles.feed}>
             <p className="text text_type_main-large mb-5">Лента заказов</p>
             <div className={styles.main}>
-                {orderFeed ?
+            {orderFeed &&
                     <>
                         <OrderList />
                         <OrderSummary/>
-                    </>
-                    :
-                    <></>
-                }
+                    </>} 
             </div>
         </section>
     )

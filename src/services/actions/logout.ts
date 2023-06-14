@@ -1,7 +1,7 @@
 import { config, request } from "../../utils/api";
 import { cleanUserInfo } from "./profile";
-import { AppDispatch, AppThunk } from "../store";
-import { LOG_OUT, LOG_OUT_COMPLETE, LOG_OUT_FAILED } from "../constants";
+import { AppThunk } from "../store";
+import { LOG_OUT, LOG_OUT_COMPLETE, LOG_OUT_FAILED, CLEAN_USER_INFO } from "../constants";
 export interface ILogOut {
     readonly type: typeof LOG_OUT
 }
@@ -19,35 +19,36 @@ export type TlogOutActions =
     | ILogOutComplete
     | ILogOutFailed
 
-
-    export const logOut: AppThunk = (token: string) => {
-        return function (dispatch: AppDispatch) {
-            dispatch({
-                type: LOG_OUT
+    export const logOut = (token: string): AppThunk => (dispatch) => {
+        dispatch({
+            type: LOG_OUT
+        })
+        request(`${config.baseUrl}/auth/logout`, {
+            method: "POST",
+            headers: config.headers,
+            body: JSON.stringify({
+                "token": `${token}`,
             })
-            request(`${config.baseUrl}/auth/logout`, {
-                method: "POST",
-                headers: config.headers,
-                body: JSON.stringify({
-                    "token": `${token}`,
-                })
-            })
-                .then(res => {
-                    if (res) {
-                        dispatch({
-                            type: LOG_OUT_COMPLETE,
-                        })
-                    }
-                })
-                .then(() => {
-                    dispatch(cleanUserInfo())
-                })
-                .catch(err => {
-                    alert(err.message)
+        })
+            .then(res => {
+                if (res) {
                     dispatch({
-                        type: LOG_OUT_FAILED,
+                        type: LOG_OUT_COMPLETE,
                     })
-                    dispatch(cleanUserInfo())
+                }
+            })
+            .then(() => {
+                dispatch({
+                    type: CLEAN_USER_INFO
                 })
-        }
+            })
+            .catch(err => {
+                alert(err.message)
+                dispatch({
+                    type: LOG_OUT_FAILED,
+                })
+                dispatch({
+                    type: CLEAN_USER_INFO
+                })
+            })
     }

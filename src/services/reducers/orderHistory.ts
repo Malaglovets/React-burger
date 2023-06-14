@@ -1,5 +1,6 @@
 import { ORDER_HISTORY_CLOSE, ORDER_HISTORY_CLOSED, ORDER_HISTORY_ERROR, ORDER_HISTORY_GET_MESSAGE, ORDER_HISTORY_SUCCESS } from '../constants';
 import { TFeed } from '../types/data';
+import { TOrderHistoryActions } from '../actions/orderHistory'
 
 type TWSState = {
     wsConnected: boolean;
@@ -8,12 +9,12 @@ type TWSState = {
     error?: Event;
 }
 
-const initialState = {
+export const initialState = {
     wsConnected: false,
     orderHistory: null
 };
 
-export const orderHistoryReducer = (state: TWSState = initialState, action: any): TWSState => {
+export const orderHistoryReducer = (state: TWSState = initialState, action: TOrderHistoryActions): TWSState => {
     switch (action.type) {
         case ORDER_HISTORY_SUCCESS:
             return {

@@ -1,11 +1,11 @@
 import React, { FC } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { useAppDispatch, useAppSelector } from "../../hooks/hooks";
-import { orderHistoryClose, orderHistoryStart } from "../../services/actions/orderHistory";
-import { getCookie } from "../../utils/cookie";
-import { Order } from "../Order/Order";
+import { useAppDispatch, useAppSelector } from "../../../hooks/hooks";
+import { orderHistoryClose, orderHistoryStart } from "../../../services/actions/orderHistory";
+import { getCookie } from "../../../utils/cookie";
+import { Order } from "../Order";
 import styles from './OrderHistory.module.css'
-import { wsURL } from "../../services/constants";
+import { wsURL } from "../../../utils/constants";
 
 export const OrdersHistory: FC = () => {
     const location = useLocation()

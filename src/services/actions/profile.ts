@@ -1,5 +1,5 @@
 import { config, fetchWithRefresh } from "../../utils/api";
-import { AppDispatch, AppThunk } from "../store";
+import { AppThunk } from "../store";
 import { TUserInfo } from "../types/data";
 import { ILoginUserComplete } from "./login";
 import { IRefreshUserInfoComplete } from "./refreshUser";
@@ -28,12 +28,11 @@ export type TProfileActions =
     | IRefreshUserInfoComplete
     | IUserRegisterComplete
 
-export const getUserInfo: AppThunk = (token: string) => {
-    return function (dispatch: AppDispatch) {
+    export const getUserInfo = (token: string): AppThunk => (dispatch) => {
         dispatch({
             type: GET_USER_INFO
         })
-        fetchWithRefresh(`${config.baseUrl}/auth/user`, {
+        fetchWithRefresh<TUserInfo>(`${config.baseUrl}/auth/user`, {
             method: "GET",
             mode: 'cors',
             headers: {
@@ -50,17 +49,16 @@ export const getUserInfo: AppThunk = (token: string) => {
                 }
             })
             .catch((err) => {
-                alert(err.message)
+                console.log(err.message)
                 dispatch({
                     type: GET_USER_INFO_FAILED
                 })
             }
             )
     }
-}
-
-export const cleanUserInfo = () => {
-    return {
-        type: CLEAN_USER_INFO
+    
+    export const cleanUserInfo = () => {
+        return {
+            type: CLEAN_USER_INFO
+        }
     }
-}

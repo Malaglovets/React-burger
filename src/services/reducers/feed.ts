@@ -1,5 +1,6 @@
 import { FEED_CLOSE, FEED_CLOSED, FEED_ERROR, FEED_GET_MESSAGE, FEED_SUCCESS } from '../constants';
 import { TFeed } from '../types/data';
+import {TFeedActions} from '../actions/feed'
 
 type TWSState = {
     wsConnected: boolean;
@@ -8,12 +9,12 @@ type TWSState = {
     error?: Event;
 }
 
-const initialState = {
+export const initialState = {
     wsConnected: false,
     orderFeed: null
 };
 
-export const feedReducer = (state: TWSState = initialState, action: any): TWSState => {
+export const feedReducer = (state: TWSState = initialState, action: TFeedActions): TWSState => {
     switch (action.type) {
         case FEED_SUCCESS:
             return {

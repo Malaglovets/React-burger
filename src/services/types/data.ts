@@ -78,6 +78,7 @@ createdAt: string,
 updatedAt: string
 }
 
-export type TSameOrderIngredient = TElement & {
-quantity: number
+export type TIngredients = {
+    readonly success: boolean,
+    readonly data: TElement[]
 }

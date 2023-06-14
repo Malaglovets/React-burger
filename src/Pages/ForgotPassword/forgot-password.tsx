@@ -58,4 +58,4 @@ export function ForgotPassword() {
             </div>
         </form>
     )
-}
+    }

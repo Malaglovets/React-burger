@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { useAppSelector } from "../../hooks/hooks";
-import { Order } from "../Order/Order";
+import { useAppSelector } from "../../../hooks/hooks";
+import { Order } from "../Order";
 import styles from './OrderList.module.css'
 
 export const OrderList = () => {

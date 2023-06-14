@@ -6,7 +6,7 @@ import styles from "./ingredients.module.css";
 export const IngredientInfo : FC<{children: ReactNode}> = ({children}) => {
 
     return (
-        <div className={styles.info}>
+        <div className={styles.ingredient}>
             {children}
         </div>
     )

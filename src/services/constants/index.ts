@@ -58,4 +58,6 @@ export const ORDER_HISTORY_CLOSED: 'ORDER_HISTORY_CLOSED' = 'ORDER_HISTORY_CLOSE
 export const ORDER_HISTORY_CLOSE: 'ORDER_HISTORY_CLOSE' = 'ORDER_HISTORY_CLOSE'
 export const ORDER_HISTORY_GET_MESSAGE: 'ORDER_HISTORY_GET_MESSAGE' = 'ORDER_HISTORY_GET_MESSAGE';
 
-export const wsURL = 'wss://norma.nomoreparties.space/orders'
+export const bunUidR2D3 = '928c0cf7-06a9-14e2-fed7-5ae9de559f3c';
+export const sauceUid = '513b95b2-21a7-e2cc-dc99-468f496635c3';
+export const mainUid = "4180955b-de2e-9b6e-ffa0-d715fab4b5c1";

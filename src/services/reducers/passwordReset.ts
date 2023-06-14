@@ -8,7 +8,7 @@ type TState = {
     res?: TResetForgotPass
 }
 
-const initialState = {
+export const initialState = {
     passwordResetRequest: false,
     passwordResetFailed: false,
     res: undefined

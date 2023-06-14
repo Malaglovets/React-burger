@@ -33,7 +33,7 @@ export function ResetPassword() {
     }
 
     return (
-        <form className={styles.form}>
+        <form className={styles.form} onSubmit={resetPassword}>
             <p className="text text_type_main-medium mb-6">Восстановление пароля</p>
             <PasswordInput
                 onChange={e => setNewPass(e.target.value)}
@@ -55,7 +55,6 @@ export function ResetPassword() {
             />
             <Button
                 disabled={code === "" || newPass === "" || passwordResetRequest ? true : false}
-                onClick={resetPassword}
                 htmlType="submit"
                 type="primary"
                 size="large"

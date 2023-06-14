@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 import styles from "./BurgerConstructor.module.css";
 import { Button, CurrencyIcon } from "@ya.praktikum/react-developer-burger-ui-components";
-import { OrderDetails } from "../OrderDetails/OrderDetails";
+import { OrderDetails } from "../Order/OrderDetails/OrderDetails";
 import { Modal } from "../Modal/Modal";
 import { useDrop } from "react-dnd";
 import { BurgerConstructorElement } from "../BurgerConstructorElement/BurgerConstructorElement";

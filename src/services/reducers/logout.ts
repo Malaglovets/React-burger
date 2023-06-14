@@ -7,7 +7,7 @@ type TState = {
     logOutFailed: boolean,
 }
 
-const initialState = {
+export const initialState = {
     logOutRequest: false,
     logOutFailed: false,
 }
